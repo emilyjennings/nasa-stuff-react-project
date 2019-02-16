@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 
 export default class Welcome extends Component {
 
+  welcome = () => {
+    alert("Welcome!")
+  }
+
 
   render() {
+
     return (
       <div>
-        return <button onClick={this.handleClick}>Play!</button>;
+        <button onClick={this.welcome}>Play!</button>
       </div>
     );
   }

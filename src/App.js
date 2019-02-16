@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactDOM from 'react-dom';
 
 import Welcome from './components/Welcome';
 import NameGame from './components/NameGame';

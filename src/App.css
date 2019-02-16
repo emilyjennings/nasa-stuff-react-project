@@ -31,3 +31,158 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background: black;
+  color: #fce399;
+}
+
+.intro {
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.searching {
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+input {
+  width: 400px;
+  height: 35px;
+  border: 3px solid #fce399;
+  border-radius: 3px;
+  font-size: 17px;
+}
+
+button {
+  width: 100px;
+  font-size: 15px;
+  border: 3px solid #fce399;
+  border-radius: 3px;
+  background: black;
+  color: #fce399;
+}
+
+button:hover {
+  background-color: #f9f1d9;
+  color: black;
+}
+
+.buttoncontainer {
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#playbutton {
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  border-radius: 20px;
+  border-width: 10px;
+}
+
+.namegame {
+  color: #f9f8b1;
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.namegame img {
+  max-width: 200px;
+}
+
+.results {
+  display: block;
+  color: #f9f1d9;
+  margin: 30px;
+}
+
+.col {
+  display: block;
+  margin: 5px auto;
+  float: left;
+  width: 50%;
+}
+
+img {
+  resize: both;
+  width: 40%;
+}
+
+#cross {
+  text-decoration: none;
+  font-size: 19px;
+}
+
+#top {
+  text-align: center;
+  padding: 10px;
+  display: block;
+  margin: 30px auto;
+  font-size: 20px;
+  border: 3px solid #fce399;
+  border-radius: 80px;
+  background: black;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  opacity: 0;
+}
+
+#hamburger {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 5px 5px 5px 5px;
+  margin: 20px;
+  border: 1px solid #fce399;
+  line-height: 2.5em;
+  font-family: monospace;
+  font-size: 20px;
+  padding: 1px 13px;
+  opacity: 0.8;
+  color: #fce399;
+  z-index: 100;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 5px 5px 5px 5px;
+  margin: 10px;
+  border: 1px solid #fce399;
+  display: block;
+  line-height: 2.5em;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 8px;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.nav a {
+  display: block;
+  color: #fce399;
+}
+
+a:hover {
+  color: #f9f1d9;
+}
