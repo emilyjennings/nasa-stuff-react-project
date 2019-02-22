@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 export default class Welcome extends Component {
 
-  welcome = () => {
-    alert("Welcome!")
+  diappear = () => {
+    this.hide()
   }
 
 
@@ -11,7 +11,7 @@ export default class Welcome extends Component {
 
     return (
       <div>
-        <button onClick={this.welcome}>Play!</button>
+        <button onClick={this.disappear}>Play!</button>
       </div>
     );
   }
