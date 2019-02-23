@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 
 export default class Welcome extends Component {
 
-  diappear = () => {
-    this.hide()
-  }
+  // diappear = () => {
+  //   this.hide()
+  // }
+
 
 
   render() {
 
     return (
       <div>
-        <button onClick={this.disappear}>Play!</button>
+        <button onClick={ e => this.props.showGame(e)}>Play!</button>
       </div>
     );
   }
