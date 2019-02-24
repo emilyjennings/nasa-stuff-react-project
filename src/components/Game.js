@@ -13,32 +13,28 @@ export default class Game extends Component {
     const url = "https://images-api.nasa.gov/search?q="
 
     //sending the call to the NASA API
-    this.setState({image: 'https://images-assets.nasa.gov/image/PIA01973/PIA01973~thumb.jpg'
-        // $.ajax({
-        //   url: url + "saturn",
-        //   type: "GET",
-        //   dataType : "json",
-        // }).done(function(json){
-        //   // //similar with the search function above, we need to parse out certain things from the results first
-        //   // let listlen = json.collection.items.length
-        //   // //select a random number for the index I'll use to choose the result
-        //   // let randomNum = random(listlen)
-        //   // //get the random result as the answer
-        //   // let randomItem = json.collection.items[randomNum]
-        //   // //get that result's photo
-        //   const imageres = json.collection.items[0].links[0].href
-        //   debugger
-        //   return imageres
-        // })
+        $.ajax({
+          url: url + "saturn",
+          type: "GET",
+          dataType : "json",
+        }).done(function(json){
+          let imageres = json.collection.items[0].links[0].href
+        }).then(json => {
+          this.setState({ image: json.collection.items[0].links[0].href })
+        })
 
-      })
+
+
+      // }).this.setState({ image: imageVariable })
 
   }
 
   render() {
 
     return (
-      <img src={this.state.image}></img>
+      <div class="namegame" id="namegameimage">
+        <img src={this.state.image}></img>
+      </div>
     );
   }
 }

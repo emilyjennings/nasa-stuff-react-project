@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Play from './components/Play';
 import Welcome from './components/Welcome';
-import NameGame from './components/NameGame';
 import Game from './components/Game';
+import Nav from './components/Nav'
+import Search from './components/Search'
+import SearchImages from './components/SearchImages'
 
 class App extends Component {
   state = {
-    buttonClicked: false
+    buttonClicked: false,
+    buttonSearchClicked: false
   }
 
   showGame = (e) => {
@@ -16,12 +20,23 @@ class App extends Component {
       buttonClicked: true
     })
   }
+
+  showSearch = (e) => {
+    e.preventDefault();
+    this.setState({
+      buttonSearchClicked: true
+    })
+  }
+
   render() {
     return (
       <div>
-        {this.state.buttonClicked == false ? <Welcome showGame={this.showGame} buttonClicked={this.state.buttonClicked} /> : null}
-        <NameGame />
+        <Welcome />
+        {this.state.buttonClicked == false ? <Play showGame={this.showGame} buttonClicked={this.state.buttonClicked} /> : null}
+        {this.state.buttonSearchClicked == false ? <Search showSearch={this.showSearch} buttonSearchClicked={this.state.buttonSearchClicked} /> : null}
+
         {this.state.buttonClicked == true ? <Game /> : null}
+        {this.state.buttonSearchClicked == true ? <SearchImages /> : null}
 
       </div>
     );
