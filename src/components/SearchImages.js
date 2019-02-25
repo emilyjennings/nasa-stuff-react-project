@@ -13,17 +13,25 @@ export default class SearchImages extends Component {
     // let randomSpaceSearch = spaceSearch[random(spaceSearch.length)]
 
     const url = "https://images-api.nasa.gov/search?q="
+    let query = 'saturn'
 
     //sending the call to the NASA API
-        $.ajax({
-          url: url + "saturn",
-          type: "GET",
-          dataType : "json",
-        }).done(function(json){
-          let imageres = json.collection.items[0].links[0].href
-        }).then(json => {
-          this.setState({ image: json.collection.items[0].links[0].href })
-        })
+      fetch(`https://images-api.nasa.gov/search?q=${query}`)
+      .then(res => res.json())
+      .then(({data}) => {
+        this.setState({ image: data.collection.items[0].links[0].href })
+      })
+
+
+        // $.ajax({
+        //   url: url + "saturn",
+        //   type: "GET",
+        //   dataType : "json",
+        // }).done(function(json){
+        //   let imageres = json.collection.items[0].links[0].href
+        // }).then(json => {
+        //   this.setState({ image: json.collection.items[0].links[0].href })
+        // })
 
         $.ajax({
           url: url + "pluto",
