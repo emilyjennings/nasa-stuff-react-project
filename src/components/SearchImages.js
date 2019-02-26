@@ -12,15 +12,14 @@ export default class SearchImages extends Component {
     // const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
     // let randomSpaceSearch = spaceSearch[random(spaceSearch.length)]
 
-    const url = "https://images-api.nasa.gov/search?q="
-    let query = 'saturn'
-
-    //sending the call to the NASA API
-      fetch(`https://images-api.nasa.gov/search?q=${query}`)
-      .then(res => res.json())
-      .then(({data}) => {
-        this.setState({ image: data.collection.items[0].links[0].href })
-      })
+    // let query = 'saturn'
+    //
+    // //sending the call to the NASA API
+    //   fetch(`https://images-api.nasa.gov/search?q=${query}`)
+    //   .then(res => res.json())
+    //   .then(({data}) => {
+    //     this.setState({ image: data.collection.items[0].links[0].href })
+    //   })
 
 
         // $.ajax({
@@ -33,17 +32,17 @@ export default class SearchImages extends Component {
         //   this.setState({ image: json.collection.items[0].links[0].href })
         // })
 
-        $.ajax({
-          url: url + "pluto",
-          type: "GET",
-          dataType : "json",
-        }).done(function(json){
-
-        }).then(json => {
-          this.setState({ image: json.collection.items[0].links[0].href })
-          this.setState({ desc: json.collection.items[0].data[0].description })
-          this.setState({ title: json.collection.items[0].data[0].title })
-        });
+        // $.ajax({
+        //   url: url + "pluto",
+        //   type: "GET",
+        //   dataType : "json",
+        // }).done(function(json){
+        //
+        // }).then(json => {
+        //   this.setState({ image: json.collection.items[0].links[0].href })
+        //   this.setState({ desc: json.collection.items[0].data[0].description })
+        //   this.setState({ title: json.collection.items[0].data[0].title })
+        // });
 
 
       // }).this.setState({ image: imageVariable })
