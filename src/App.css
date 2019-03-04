@@ -4,6 +4,7 @@
 body {
   background: #141413;
   color: #ebedc7;
+  font-family: Georgia;
 }
 
 /* Component Features */
@@ -89,11 +90,6 @@ button:hover {
   width: 50%;
 }
 
-img {
-  resize: both;
-  width: 40%;
-}
-
 /* Hamburger Nav Menu */
 
 #cross {
@@ -165,13 +161,51 @@ a:hover {
 
 .cardborder {
   display: block;
-  height: 200px;
+  height: 300px;
   background: #f9f9cf;
   box-shadow: 6px 6px #3a3a38;
   margin: 30px auto;
   width: 60%;
   padding: 15px;
   overflow-y: auto;
+}
+
+.title {
+  display: block;
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 2%;
+  color: #4A5050;
+  width: 50%;
+}
+
+.image {
+  position: relative;
+  display: block;
+  margin: auto;
+  height: 280px;
+  overflow: hidden;
+}
+
+.image img {
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+.leftbox {
+  display: block;
+  position: relative;
+  width: 70%;
+  float: left;
+}
+
+.rightbox {
+  display: block;
+  position: relative;
+  width: 30%;
+  float: left;
+  margin: auto;
 }
 
 /* Header */
@@ -202,11 +236,13 @@ a:hover {
 
 input {
   display: block;
-  margin: 140px auto 0 auto;
+  margin: 10px auto 0 auto;
   width: 300px;
   height: 30px;
 }
 
-.searchtitle {
-  font-size: 20px;
+.searchtext {
+  display: block;
+  width: 10%;
+  margin: 140px auto 0 auto;
 }

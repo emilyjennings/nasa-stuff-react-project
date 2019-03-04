@@ -17,8 +17,12 @@ export default class SearchImages extends Component {
         <Search fetchImages={this.fetchImages}/>
           {this.state.images.map(image =>
             <div className="cardborder">
-              <div className="image"><img src={image.links[0].href}/></div>
-              <div className="title">{image.data[0].title}</div>
+              <div className="leftbox">
+                <div className="image"><img src={image.links[0].href}/></div>
+              </div>
+              <div className="rightbox">
+                <div className="title">{image.data[0].title}</div>
+              </div>
             </div>
 
           )}
