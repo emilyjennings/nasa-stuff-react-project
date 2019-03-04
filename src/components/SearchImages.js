@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
-// import React from 'react'
 import $ from 'jquery'
-//
-// const SearchImages = props => {
-//   console.log(props);
-//   return (
-//     <div>
-//     results
-//     </div>
-//   )
-// }
-//
-// export default SearchImages
+
+import Search from './Search'
 
 
 export default class SearchImages extends Component {
@@ -24,6 +14,7 @@ export default class SearchImages extends Component {
 
     return (
       <div>
+        <Search fetchImages={this.fetchImages}/>
           {this.state.images.map(image =>
             <div className="cardborder">
               <div className="image"><img src={image.links[0].href}/></div>
@@ -35,12 +26,10 @@ export default class SearchImages extends Component {
     );
   }
 
-  fetchImages = () => {
-
-
+  fetchImages = (query = "") => {
 
     $.ajax({
-        url: 'https://images-api.nasa.gov/search?q=' + "saturn"
+        url: `https://images-api.nasa.gov/search?q=${query}`
       }).then(json => {
         this.setState({ images: json.collection.items })
       })
