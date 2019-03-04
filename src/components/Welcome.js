@@ -4,7 +4,9 @@ export default class Welcome extends Component {
 
   render() {
     return (
-      <div class="intro">Welcome to the Universe</div>
+      <div className="navbar">
+        <div class="navtitle">Welcome to the Universe</div>
+      </div>
     );
   }
 }

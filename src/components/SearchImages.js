@@ -37,13 +37,14 @@ export default class SearchImages extends Component {
 
   fetchImages = () => {
 
+
+
     $.ajax({
         url: 'https://images-api.nasa.gov/search?q=' + "saturn"
       }).then(json => {
         this.setState({ images: json.collection.items })
       })
 
-      //I would figure out a way to search this API with more time, but I noticed other API sources of Hacker News have more searchable options. This particular one doesn't have a lot of options in the documentaiton for searching. I'd have to maybe look at the content of each item in the results dfrom the API to see if the title, for instance, includes the query from the search.
 
   }
 

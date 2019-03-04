@@ -8,7 +8,7 @@ export default class SearchButton extends Component {
 
     return (
       <div class="buttoncontainer">
-      <button onClick={ e => this.props.showSearch(e)}>Search!</button>
+        <button onClick={ e => this.props.showSearch(e)}>Search!</button>
       </div>
     );
   }
