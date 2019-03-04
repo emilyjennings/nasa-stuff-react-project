@@ -16,64 +16,39 @@ import $ from 'jquery'
 
 export default class SearchImages extends Component {
   state = {
-    image: "",
-    desc: "",
-    title: ""
+    images: []
   }
 
-  componentDidMount(){
-    // const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
-    // let randomSpaceSearch = spaceSearch[random(spaceSearch.length)]
-
-    let query = 'saturn'
-
-    //sending the call to the NASA API
-      // fetch(`https://images-api.nasa.gov/search?q=${query}`)
-      // .then(res => res.json())
-      // .then(({data}) => {
-      //   this.setState({ image: data.collection.items[0].links[0].href })
-      // })
-
-        //
-        $.ajax({
-          url: 'https://images-api.nasa.gov/search?q=' + "saturn",
-          type: "GET",
-          dataType : "json",
-        }).done(function(json){
-          let imageres = json.collection.items[0].links[0].href
-        }).then(json => {
-          this.setState({ image: json.collection.items[0].links[0].href })
-        })
-        //
-        // $.ajax({
-        //   url: url + "pluto",
-        //   type: "GET",
-        //   dataType : "json",
-        // }).done(function(json){
-        //
-        // }).then(json => {
-        //   this.setState({ image: json.collection.items[0].links[0].href })
-        //   this.setState({ desc: json.collection.items[0].data[0].description })
-        //   this.setState({ title: json.collection.items[0].data[0].title })
-        // });
-
-
-      // }).this.setState({ image: imageVariable })
-
-  }
 
   render() {
 
     return (
+      <div>
+          {this.state.images.map(image =>
+            <div className="cardborder">
+              <div className="image"><img src={image.links[0].href}/></div>
+              <div className="title">{image.data[0].title}</div>
+            </div>
 
-      <div class="image">
-        images:
-        <h1>{this.state.title}</h1>
-        <img src={this.state.image}></img>
-        <div>{this.state.desc}</div>
+          )}
       </div>
-
     );
+  }
+
+  fetchImages = () => {
+
+    $.ajax({
+        url: 'https://images-api.nasa.gov/search?q=' + "saturn"
+      }).then(json => {
+        this.setState({ images: json.collection.items })
+      })
+
+      //I would figure out a way to search this API with more time, but I noticed other API sources of Hacker News have more searchable options. This particular one doesn't have a lot of options in the documentaiton for searching. I'd have to maybe look at the content of each item in the results dfrom the API to see if the title, for instance, includes the query from the search.
+
+  }
+
+  componentDidMount(){
+    this.fetchImages()
   }
 
 
