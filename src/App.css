@@ -2,9 +2,11 @@
 
 
 body {
-  background: #bee5d1;
-  color: #2f3331;
+  background: #141413;
+  color: #ebedc7;
 }
+
+/* Component Features */
 
 .intro {
   display: block;
@@ -25,7 +27,7 @@ body {
 input {
   width: 400px;
   height: 35px;
-  border: 3px solid #fce399;
+  border: 3px solid #ebedc7;
   border-radius: 3px;
   font-size: 17px;
 }
@@ -34,14 +36,14 @@ button {
   width: 180px;
   height: 60px;
   font-size: 25px;
-  border: 6px solid #fce399;
+  border: 6px solid #ebedc7;
   border-radius: 8px;
   background: black;
-  color: #fce399;
+  color: #ebedc7;
 }
 
 button:hover {
-  background-color: #f9f1d9;
+  background-color: #ebedc7;
   color: black;
 }
 
@@ -92,6 +94,8 @@ img {
   width: 40%;
 }
 
+/* Hamburger Nav Menu */
+
 #cross {
   text-decoration: none;
   font-size: 19px;
@@ -138,7 +142,7 @@ img {
   right: 0;
   border-radius: 5px 5px 5px 5px;
   margin: 10px;
-  border: 1px solid #fce399;
+  border: 1px solid #ebedc7;
   display: block;
   line-height: 2.5em;
   font-family: monospace;
@@ -157,16 +161,20 @@ a:hover {
   color: #f9f1d9;
 }
 
+/* Cards */
+
 .cardborder {
   display: block;
   height: 200px;
-  background: #e1f2e9;
-  box-shadow: 2px 3px 3px 2px #bfccc5;
+  background: #f9f9cf;
+  box-shadow: 6px 6px #3a3a38;
   margin: 30px auto;
   width: 60%;
   padding: 15px;
   overflow-y: auto;
 }
+
+/* Header */
 
 .navbar {
   display: block;
@@ -174,7 +182,7 @@ a:hover {
   width: 100%;
   top: 0;
   left: 0;
-  background-image: linear-gradient(#04CF94, #73FAD5);
+  background-image: linear-gradient(#fcfc9c, #ebedc7);
   text-align: center;
   font-family: Georgia;
   font-weight: bold;
@@ -184,6 +192,7 @@ a:hover {
 
 .navtitle {
   display: block;
+  font-size: 40px;
   float: left;
   width: 50%;
   color: #4A5050;
