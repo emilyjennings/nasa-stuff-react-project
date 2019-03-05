@@ -53,7 +53,7 @@ button:hover {
   float: left;
   width: 100%;
   text-align: center;
-  margin: 150px auto;
+  margin: 170px auto;
 }
 
 #playbutton {
@@ -179,9 +179,9 @@ a:hover {
   background-color: #4A5050;
   border: 2px solid #4A5050;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
-  width: 60%
+  width: 65%
 }
 
 .image {
@@ -259,17 +259,21 @@ a:hover {
   display: block;
   font-size: 40px;
   float: left;
-  width: 50%;
+  width: 100%;
   color: #4A5050;
+  text-align: left;
+  padding-left: 40px;
 }
 
 .emily {
   display: block;
   font-size: 20px;
   float: left;
-  width: 50%;
+  text-align: left;
+  width: 100%;
   color: #4A5050;
   margin-top: 30px;
+  padding-left: 40px;
 }
 
 .navbar a {
@@ -325,6 +329,7 @@ input {
 
   .title {
     font-size: 1.2em;
+
   }
 
   .image img {
