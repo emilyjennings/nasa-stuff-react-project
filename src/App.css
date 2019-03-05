@@ -173,13 +173,13 @@ a:hover {
 .title {
   display: block;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.3em;
   margin-top: auto;
   color: #f9f9cf;
   background-color: #4A5050;
   border: 2px solid #4A5050;
   border-radius: 10px;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
   width: 65%
 }
@@ -297,7 +297,7 @@ input {
   font-size: 25px
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 950px) {
 
   .navbar {
     padding: 30px 0px;
@@ -328,7 +328,7 @@ input {
   }
 
   .title {
-    font-size: 1.2em;
+    font-size: 1em;
 
   }
 
@@ -343,14 +343,25 @@ input {
   .rightbox {
     width: 40%;
   }
+
+  .bottombox {
+    display: block;
+    float: left;
+    margin: 12px;
+  }
 }
 
 @media all and (max-width: 600px) {
   .cardborder {
-    height: 200px
+    height: 150px
   }
 
   .title {
-    font-size: 1em
+    font-size: .6em;
+    margin: 10px;
+  }
+
+  .creator {
+    font-size: 10px;
   }
 }
