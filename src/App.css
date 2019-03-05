@@ -161,7 +161,7 @@ a:hover {
 
 .cardborder {
   display: block;
-  height: 300px;
+  height: 350px;
   background: #f9f9cf;
   box-shadow: 6px 6px #3a3a38;
   margin: 30px auto;
@@ -174,13 +174,14 @@ a:hover {
   display: block;
   font-weight: bold;
   font-size: 2em;
-  margin-top: 2%;
+  margin-top: auto;
   color: #f9f9cf;
   background-color: #4A5050;
   border: 2px solid #4A5050;
   border-radius: 10px;
   padding: 5px;
   text-align: center;
+  width: 60%
 }
 
 .image {
@@ -226,7 +227,8 @@ a:hover {
 .desc {
   color: #4A5050;
   display: block;
-
+  width: 75%;
+  margin: auto;
 }
 
 .creator {
@@ -261,6 +263,20 @@ a:hover {
   color: #4A5050;
 }
 
+.emily {
+  display: block;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  color: #4A5050;
+  margin-top: 30px;
+}
+
+.navbar a {
+  text-decoration: underline;
+  color: #4A5050
+}
+
 /* Search */
 
 input {
@@ -285,6 +301,13 @@ input {
 
   .navtitle {
     font-size: 25px;
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .emily {
+    font-size: 20px;
     float: none;
     width: 100%;
     margin: 0;
