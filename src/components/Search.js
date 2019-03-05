@@ -41,7 +41,7 @@ class Search extends Component {
   render() {
       return (
         <div>
-          <h3 className="searchtext">Search</h3>
+          <h3 className="searchtext">Enter a Celestial Term:</h3>
           <form onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
           </form>
