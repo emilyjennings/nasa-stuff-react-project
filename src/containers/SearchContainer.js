@@ -20,14 +20,16 @@ class SearchContainer extends Component {
   showSearch = (e) => {
     e.preventDefault();
     this.setState({
-      buttonSearchClicked: true
+      buttonSearchClicked: true,
+      buttonClicked: true
     })
   }
 
   showGame = (e) => {
     e.preventDefault();
     this.setState({
-      buttonGameClicked: true
+      buttonGameClicked: true,
+      buttonClicked: true
     })
   }
 
@@ -40,9 +42,6 @@ class SearchContainer extends Component {
 
         {this.state.buttonSearchClicked == false ? <SearchButton showSearch={this.showSearch} buttonSearchClicked={this.state.buttonSearchClicked} /> : null}
         {this.state.buttonSearchClicked == true ? <SearchImages /> : null}
-
-        {this.state.buttonGameClicked == false ? <Play showGame={this.showGame} buttonGameClicked={this.state.buttonGameClicked} /> : null}
-        {this.state.buttonGameClicked == true ? <Game /> : null}
 
       </div>
     )
@@ -71,3 +70,7 @@ class SearchContainer extends Component {
 }
 
 export default SearchContainer
+
+//game components for later:
+// {this.state.buttonGameClicked == false ? <Play showGame={this.showGame} buttonGameClicked={this.state.buttonGameClicked} /> : null}
+// {this.state.buttonGameClicked == true ? <Game /> : null}

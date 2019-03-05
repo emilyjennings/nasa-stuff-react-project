@@ -166,7 +166,7 @@ a:hover {
   box-shadow: 6px 6px #3a3a38;
   margin: 30px auto;
   width: 60%;
-  padding: 15px;
+  padding: 20px;
   overflow-y: auto;
 }
 
@@ -175,15 +175,18 @@ a:hover {
   font-weight: bold;
   font-size: 2em;
   margin-top: 2%;
-  color: #4A5050;
-  width: 50%;
+  color: #f9f9cf;
+  background-color: #4A5050;
+  border: 2px solid #4A5050;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
 }
 
 .image {
   position: relative;
   display: block;
   margin: auto;
-  height: 280px;
   overflow: hidden;
 }
 
@@ -196,16 +199,42 @@ a:hover {
 .leftbox {
   display: block;
   position: relative;
-  width: 70%;
+  width: 60%;
   float: left;
 }
 
 .rightbox {
   display: block;
   position: relative;
-  width: 30%;
+  width: 40%;
   float: left;
   margin: auto;
+}
+
+.bottombox {
+  display: block;
+  float: left;
+  margin: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.desc {
+  color: #4A5050;
+  display: block;
+
+}
+
+.creator {
+  text-align: center;
+  color: #4A5050;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 20px;
 }
 
 /* Header */
@@ -243,6 +272,57 @@ input {
 
 .searchtext {
   display: block;
-  width: 10%;
   margin: 140px auto 0 auto;
+  text-align: center;
+  font-size: 25px
+}
+
+@media all and (max-width: 900px) {
+
+  .navbar {
+    padding: 30px 0px;
+  }
+
+  .navtitle {
+    font-size: 25px;
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .searchtext {
+    font-size: 20px;
+  }
+
+  .cardborder {
+    background: #f9f9cf;
+    box-shadow: 6px 6px #3a3a38;
+    height: 300px;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .image img {
+    width: 70%;
+  }
+
+  .leftbox{
+    width: 60%;
+  }
+
+  .rightbox {
+    width: 40%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .cardborder {
+    height: 200px
+  }
+
+  .title {
+    font-size: 1em
+  }
 }

@@ -23,6 +23,16 @@ export default class SearchImages extends Component {
               <div className="rightbox">
                 <div className="title">{image.data[0].title}</div>
               </div>
+              <div className="clearfix">
+                <div className="bottombox">
+                  <div className="desc">
+                    {this.sameContent(image.data[0].title, image.data[0].description)}
+                  </div>
+                </div>
+              </div>
+              <div className="creator">
+                {image.data[0].secondary_creator}
+              </div>
             </div>
 
           )}
@@ -39,6 +49,14 @@ export default class SearchImages extends Component {
       })
 
 
+  }
+
+  sameContent = (a, b) => {
+    if (a == b) {
+      return null
+    }else{
+      return b
+    }
   }
 
   componentDidMount(){
