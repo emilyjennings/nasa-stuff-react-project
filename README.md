@@ -1,5 +1,11 @@
 ## Notes as I make this project real
 
+First iteration of this project (March 2019): I made a search app where the user can enter a term and the NASA API will present a list of results on cards.
+
+I was learning about components, state and props before this project and the hardest parts of building this as my first React app were: the container component and how the components all relate to each other through it, and creating the cards through mapping the images in the search state.
+
+This was challenging because to handle the errors where a field in the json was empty, I needed to gracefully still show something. I decided to have a default image shown in case of no image results. I also needed to let the user know when their search term didn't return anything.
+
 I will make a game where a user is presented with two images from the NASA API and they pick the correct one matching the name they see.
 
 I will make a game where a description of the object is given and the image of some items and the user has to match the image and description.
