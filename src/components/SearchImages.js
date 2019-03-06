@@ -24,11 +24,13 @@ export default class SearchImages extends Component {
 
 //The NASA API is called and then the results go to the state
   fetchImages = (query = "") => {
+    if (query != null) {
       $.ajax({
         url: `https://images-api.nasa.gov/search?q=${query}`
       }).then(json => {
         this.setState({ images: json.collection.items })
       })
+    } 
 
   }
 
@@ -86,11 +88,12 @@ export default class SearchImages extends Component {
 
   //A function to help show a message when the search term returns no results
   noResults = () => {
-    
+    return "no results"
   }
 
+//The component has loaded and the functions are called - was using this before but not currently
   componentDidMount(){
-    this.fetchImages()
+
   }
 
 
