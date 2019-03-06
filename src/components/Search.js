@@ -7,10 +7,6 @@ class Search extends Component {
     query: ""
   }
 
-  // handleSubmit = event => {
-  //   event.preventDefault()
-  //   this.props.fetchGIFs(this.state.query)
-  // }
 
   // fetchImages(query) {
   //   const url = "https://images-api.nasa.gov/search?q="

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery'
 
 import Search from './Search'
+import moon from './moon.jpg'
 
 
 export default class SearchImages extends Component {
@@ -18,10 +19,10 @@ export default class SearchImages extends Component {
           {this.state.images.map(image =>
             <div className="cardborder">
               <div className="leftbox">
-                <div className="image"><img src={image.links[0].href}/></div>
+                <div className="image"><img src={this.hasImage(image.links)}/></div>
               </div>
               <div className="rightbox">
-                <div className="title">{image.data[0].title}</div>
+                <div className="title">{this.hasContent(image.data)}</div>
               </div>
               <div className="clearfix">
                 <div className="bottombox">
@@ -56,6 +57,22 @@ export default class SearchImages extends Component {
       return null
     }else{
       return b
+    }
+  }
+
+  hasImage = (result) => {
+    if (typeof result !== 'undefined') {
+      return result[0].href
+    }else{
+      return moon
+    }
+  }
+
+  hasContent = (result) => {
+    if (typeof result !== 'undefined') {
+      return result[0].title
+    }else{
+      return "No content"
     }
   }
 
