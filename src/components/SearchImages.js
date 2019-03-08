@@ -30,7 +30,7 @@ export default class SearchImages extends Component {
       }).then(json => {
         this.setState({ images: json.collection.items })
       })
-    } 
+    }
 
   }
 
@@ -63,7 +63,7 @@ export default class SearchImages extends Component {
 
 //This determines the HTML to render and the card structure, mapping the images from the state onto each card
   getResults = () => {
-    if (this.state.images.length > 0) {
+    if (this.state.images !== []) {
       return this.state.images.map(image =>
         <div className="cardborder">
           <div className="leftbox">
@@ -83,7 +83,7 @@ export default class SearchImages extends Component {
             {image.data[0].secondary_creator}
           </div>
         </div>)
-      }
+    }
   }
 
   //A function to help show a message when the search term returns no results
