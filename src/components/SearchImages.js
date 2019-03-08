@@ -24,12 +24,14 @@ export default class SearchImages extends Component {
 
 //The NASA API is called and then the results go to the state
   fetchImages = (query = "") => {
-    if (query != null) {
+    if (query != "") {
       $.ajax({
         url: `https://images-api.nasa.gov/search?q=${query}`
       }).then(json => {
         this.setState({ images: json.collection.items })
       })
+    } else {
+      $('.searchtext').text("Try again")
     }
 
   }
@@ -83,12 +85,14 @@ export default class SearchImages extends Component {
             {image.data[0].secondary_creator}
           </div>
         </div>)
+    } else {
+      this.noResults()
     }
   }
 
   //A function to help show a message when the search term returns no results
   noResults = () => {
-    return "no results"
+    return <div className="cardborder">"no results yet"</div>
   }
 
 //The component has loaded and the functions are called - was using this before but not currently
