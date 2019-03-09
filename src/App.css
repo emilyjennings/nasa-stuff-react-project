@@ -297,6 +297,12 @@ input {
   font-size: 25px
 }
 
+.noresult {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 @media all and (max-width: 950px) {
 
   .navbar {

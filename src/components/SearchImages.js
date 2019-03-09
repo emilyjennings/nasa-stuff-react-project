@@ -64,8 +64,8 @@ export default class SearchImages extends Component {
   }
 
 //This determines the HTML to render and the card structure, mapping the images from the state onto each card
-  getResults = () => {
-    if (this.state.images !== []) {
+  getResults = (query) => {
+    if (this.state.images.length > 0) {
       return this.state.images.map(image =>
         <div className="cardborder">
           <div className="leftbox">
@@ -86,13 +86,13 @@ export default class SearchImages extends Component {
           </div>
         </div>)
     } else {
-      this.noResults()
+      return this.noResults()
     }
   }
 
   //A function to help show a message when the search term returns no results
   noResults = () => {
-    return <div className="cardborder">"no results yet"</div>
+    return <div class="noresult">no results yet</div>
   }
 
 //The component has loaded and the functions are called - was using this before but not currently
