@@ -1,15 +1,6 @@
-import React, { Component } from 'react';
-
-export default class SearchButton extends Component {
-
+import React from 'react'
 
 //This component just renders a button to choose to search
-  render() {
+const SearchButton = props => <div className="buttoncontainer"> <button onClick={props.onClick}>Search!</button> </div>
 
-    return (
-      <div class="buttoncontainer">
-        <button onClick={ e => this.props.showSearch(e)}>Search!</button>
-      </div>
-    );
-  }
-}
+export default SearchButton
