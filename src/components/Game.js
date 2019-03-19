@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import $ from 'jquery'
 
 export default class Game extends Component {
+
   state = {
     image: ""
   }
 
-  componentDidMount(){
-    // const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
-    // let randomSpaceSearch = spaceSearch[random(spaceSearch.length)]
+  playGame = () => {
+    const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
+    let randomSearchItem = spaceSearch[Math.floor(Math.random()*spaceSearch.length)];
 
     const url = "https://images-api.nasa.gov/search?q="
 
     //sending the call to the NASA API
         $.ajax({
-          url: url + "saturn",
+          url: url + randomSearchItem,
           type: "GET",
           dataType : "json",
         }).done(function(json){
@@ -22,10 +23,10 @@ export default class Game extends Component {
         }).then(json => {
           this.setState({ image: json.collection.items[0].links[0].href })
         })
+  }
 
-
-
-      // }).this.setState({ image: imageVariable })
+  componentDidMount(){
+    this.playGame()
 
   }
 

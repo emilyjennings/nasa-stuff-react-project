@@ -49,11 +49,11 @@ button:hover {
 }
 
 .buttoncontainer {
-  display: block;
+  display: inline-block;
   float: left;
-  width: 100%;
+  width: 50%;
   text-align: center;
-  margin: 230px auto;
+  margin: 10px auto;
 }
 
 #playbutton {
@@ -241,6 +241,11 @@ a:hover {
 
 /* Header */
 
+.placeholder {
+  height: 300px;
+}
+
+
 .navbar {
   display: block;
   position: fixed;
@@ -292,14 +297,19 @@ input {
 
 .searchtext {
   display: block;
-  margin: 190px auto 0 auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 25px
 }
 
-.noresult {
-  display: block;
+.searchcontent {
   width: 100%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.searchstuff {
   text-align: center;
 }
 

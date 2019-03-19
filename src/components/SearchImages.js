@@ -11,28 +11,15 @@ export default class SearchImages extends Component {
     images: []
   }
 
-
-  render() {
-    //The Search field is rendered and the results are presented.
-    return (
-      <div>
-        <Search fetchImages={this.fetchImages}/>
-        {this.getResults()}
-      </div>
-    );
-  }
-
 //The NASA API is called and then the results go to the state
   fetchImages = (query = "") => {
-    if (query != "") {
+
       $.ajax({
         url: `https://images-api.nasa.gov/search?q=${query}`
       }).then(json => {
         this.setState({ images: json.collection.items })
       })
-    } else {
-      $('.searchtext').text("Try again")
-    }
+
 
   }
 
@@ -85,14 +72,24 @@ export default class SearchImages extends Component {
             {image.data[0].secondary_creator}
           </div>
         </div>)
-    } else {
+    }else {
       return this.noResults()
     }
   }
 
   //A function to help show a message when the search term returns no results
   noResults = () => {
-    return <div class="noresult">no results yet</div>
+    return <div className="noresult">no results</div>
+  }
+
+  render() {
+    //The Search field is rendered and the results are presented.
+    return (
+      <div className="searchstuff">
+        <Search fetchImages={this.fetchImages}/>
+        {this.getResults()}
+      </div>
+    );
   }
 
 //The component has loaded and the functions are called - was using this before but not currently

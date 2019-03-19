@@ -16,7 +16,7 @@ class Search extends Component {
 //renders a form to search and submits a query to the state
   render() {
       return (
-        <div>
+        <div className="searchcontent">
           <h3 className="searchtext">Enter a Celestial Term:</h3>
           <form onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />

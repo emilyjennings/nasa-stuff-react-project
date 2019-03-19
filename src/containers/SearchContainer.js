@@ -40,8 +40,11 @@ class SearchContainer extends Component {
       <div>
         <Welcome />
 
-        {this.state.buttonSearchClicked === false ? <SearchButton showSearch={this.showSearch} buttonSearchClicked={this.state.buttonSearchClicked} /> : null}
+        {this.state.buttonSearchClicked === false && this.state.buttonGameClicked === false ? <SearchButton showSearch={this.showSearch} buttonSearchClicked={this.state.buttonSearchClicked} /> : null}
         {this.state.buttonSearchClicked === true ? <SearchImages /> : null}
+
+        {this.state.buttonGameClicked === false && this.state.buttonSearchClicked === false ? <Play showGame={this.showGame} buttonGameClicked={this.state.buttonGameClicked} /> : null}
+        {this.state.buttonGameClicked === true ? <Game /> : null}
 
       </div>
     )
