@@ -45,7 +45,7 @@ export default class Game extends Component {
     })
 
     if (this.state.item === "moon") {
-      return "you won"
+      return <div className="win">you won</div>
     }
   }
 
