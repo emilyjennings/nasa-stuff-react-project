@@ -1,33 +1,34 @@
-import React, { Component } from 'react';
-import $ from 'jquery'
+import React, { Component } from "react";
 
 class Search extends Component {
-
   state = {
     query: ""
-  }
+  };
 
-  //This lets the SearchImages component know to use the query here for the search action
+  // This lets the SearchImages component know to use the query here for the search action
   handleSubmit = event => {
-    event.preventDefault()
-    this.props.fetchImages(this.state.query)
-  }
+    event.preventDefault();
+    this.props.fetchImages(this.state.query);
+  };
 
-//renders a form to search and submits a query to the state
+  // Renders a form to search and submits a query to the state
   render() {
-      return (
-        <div>
-          <h3 className="searchtext">Enter a Celestial Term:</h3>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
-          </form>
-        </div>
-      )
-    }
+    return (
+      <div>
+        <h3 className="searchtext">Enter a Celestial Term:</h3>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.query}
+            onChange={event => this.setState({ query: event.target.value })}
+          />
+        </form>
+      </div>
+    );
+  }
 }
 
-export default Search
-
+export default Search;
 
 //Code below is fore use later if I want to use fetch instead od ajax
 
