@@ -4,10 +4,12 @@ import $ from 'jquery'
 export default class Game extends Component {
 
   state = {
-    image: ""
+    image: "",
+    item: "",
+    buttonClicked: false
   }
 
-  playGame = () => {
+  getGameImage = () => {
     const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
     let randomSearchItem = spaceSearch[Math.floor(Math.random()*spaceSearch.length)];
 
@@ -21,20 +23,44 @@ export default class Game extends Component {
         }).done(function(json){
           let imageres = json.collection.items[0].links[0].href
         }).then(json => {
-          this.setState({ image: json.collection.items[0].links[0].href })
+          this.setState({
+            image: json.collection.items[0].links[0].href,
+            item: randomSearchItem
+           })
         })
   }
 
+  playGame = () => {
+    const spaceWords = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
+      return spaceWords.map(word =>
+        <div className="guessing">
+          <button onClick={ e => this.guessChoice(e)} id={word}>{word}</button>
+        </div>
+      )
+  }
+
+  guessChoice = () => {
+    this.setState({
+      buttonClicked: true
+    })
+
+    if (this.state.item === "moon") {
+      return "you won"
+    }
+  }
+
   componentDidMount(){
-    this.playGame()
+    this.getGameImage()
+
 
   }
 
   render() {
 
     return (
-      <div class="namegame" id="namegameimage">
-        <img src={this.state.image}></img>
+      <div className="namegame" >
+        <img src={this.state.image} id="namegameimage"></img>
+        <div className="namegamebutton">{this.playGame()}</div>
       </div>
     );
   }
