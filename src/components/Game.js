@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 
+import Play from '../components/Play'
+
 export default class Game extends Component {
 
   state = {
     image: "",
-    item: ""
+    item: "",
+    gamePlayed: false
   }
 
   getGameImage = () => {
@@ -41,6 +44,7 @@ export default class Game extends Component {
   guessChoice = (e) => {
 
     this.setState({
+      gamePlayed: true,
       guess: e.target.id
     })
     debugger
@@ -48,14 +52,14 @@ export default class Game extends Component {
 
     if (this.state.item == e.target.id) {
       $(".namegamebutton").text("You're Right!")
+
     } else {
-      $(".namegamebutton").text("Wrong, Try Again")
+      $(".namegamebutton").text("Wrong, Try Again. Correct Answer: " + this.state.item)
     }
   }
 
   componentDidMount(){
     this.getGameImage()
-
 
   }
 
@@ -65,6 +69,7 @@ export default class Game extends Component {
       <div className="namegame" >
         <img src={this.state.image} id="namegameimage"></img>
         <div className="namegamebutton">{this.playGame()}</div>
+        {this.state.gamePlayed === true ? "Keep Going." : null}
       </div>
     );
   }
