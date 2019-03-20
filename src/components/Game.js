@@ -5,8 +5,7 @@ export default class Game extends Component {
 
   state = {
     image: "",
-    item: "",
-    buttonClicked: false
+    item: ""
   }
 
   getGameImage = () => {
@@ -39,13 +38,18 @@ export default class Game extends Component {
       )
   }
 
-  guessChoice = () => {
-    this.setState({
-      buttonClicked: true
-    })
+  guessChoice = (e) => {
 
-    if (this.state.item === "moon") {
-      return <div className="win">you won</div>
+    this.setState({
+      guess: e.target.id
+    })
+    debugger
+
+
+    if (this.state.item == e.target.id) {
+      $(".namegamebutton").text("You're Right!")
+    } else {
+      $(".namegamebutton").text("Wrong, Try Again")
     }
   }
 
