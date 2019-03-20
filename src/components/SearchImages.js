@@ -94,7 +94,7 @@ export default class SearchImages extends Component {
 
 //The component has loaded and the functions are called - was using this before but not currently
   componentDidMount(){
-
+    
   }
 
 

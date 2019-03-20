@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 
-import Play from '../components/Play'
+import PlayAgain from '../components/PlayAgain'
 
 export default class Game extends Component {
 
+//state tracks the current image from the api, the item trhe player guessed, attempts played, and whether the game has been played once
   state = {
     image: "",
     item: "",
-    gamePlayed: false
+    gamePlayed: false,
+    playAgain: false,
+    attempts: 0
   }
 
+//ajax request to get the image for the game
   getGameImage = () => {
     const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
     let randomSearchItem = spaceSearch[Math.floor(Math.random()*spaceSearch.length)];
@@ -32,6 +36,7 @@ export default class Game extends Component {
         })
   }
 
+//the game choices are rendered
   playGame = () => {
     const spaceWords = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
       return spaceWords.map(word =>
@@ -41,14 +46,13 @@ export default class Game extends Component {
       )
   }
 
+//the player chooses one item and this function determines if it's a win
   guessChoice = (e) => {
 
     this.setState({
       gamePlayed: true,
       guess: e.target.id
     })
-    debugger
-
 
     if (this.state.item == e.target.id) {
       $(".namegamebutton").text("You're Right!")
@@ -58,18 +62,30 @@ export default class Game extends Component {
     }
   }
 
+  playAgain = () => {
+    this.setState({
+      gamePlayed: false
+    })
+  }
+
+  renderGame = () => {
+    return <div className="namegamebutton">{this.playGame()}</div>
+  }
+
+
+//ajax request after the component mounts
   componentDidMount(){
     this.getGameImage()
 
   }
 
-  render() {
 
+//Renders the game image, the choices, and determines if the game is done and can be played again
+  render() {
     return (
       <div className="namegame" >
         <img src={this.state.image} id="namegameimage"></img>
-        <div className="namegamebutton">{this.playGame()}</div>
-        {this.state.gamePlayed === true ? "Keep Going." : null}
+        {this.state.gamePlayed === true ? <PlayAgain /> : this.renderGame()}
       </div>
     );
   }
