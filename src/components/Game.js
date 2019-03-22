@@ -84,8 +84,9 @@ export default class Game extends Component {
   render() {
     return (
       <div className="namegame" >
+        <div className="titlegame">Guess which one is associated with this image:</div>
         <img src={this.state.image} id="namegameimage"></img>
-        {this.state.gamePlayed === true ? <PlayAgain /> : this.renderGame()}
+        {this.renderGame()}
       </div>
     );
   }

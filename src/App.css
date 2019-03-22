@@ -91,6 +91,14 @@ button:hover {
   width: 50%;
 }
 
+.titlegame {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 30px;
+}
+
 /* Hamburger Nav Menu */
 
 #cross {
