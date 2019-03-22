@@ -27,30 +27,30 @@ export default class SearchImages extends Component {
   sameContent = (a, b) => {
     if (a === b) {
       return null
-    }else{
+    } else {
       return b
-    }
+    };
   }
 
-//This function determines if an image is present in the object and if not, renders a default image
+// This function determines if an image is present in the object and if not, renders a default image
   hasImage = (result) => {
     if (typeof result !== 'undefined') {
       return result[0].href
-    }else{
+    } else {
       return moon
     }
   }
 
-//This determines if the title exists, much like the function above
+// This determines if the title exists, much like the function above
   hasContent = (result) => {
     if (typeof result !== 'undefined') {
       return result[0].title
-    }else{
+    } else {
       return "No content"
     }
-  }
+  };
 
-//This determines the HTML to render and the card structure, mapping the images from the state onto each card
+// This determines the HTML to render and the card structure, mapping the images from the state onto each card
   getResults = (query) => {
     if (this.state.images.length > 0) {
       return this.state.images.map(image =>
@@ -72,7 +72,7 @@ export default class SearchImages extends Component {
             {image.data[0].secondary_creator}
           </div>
         </div>)
-    }else {
+    } else {
       return this.noResults()
     }
   }
@@ -80,7 +80,7 @@ export default class SearchImages extends Component {
   //A function to help show a message when the search term returns no results
   noResults = () => {
     return <div className="noresult">no results</div>
-  }
+  };
 
   render() {
     //The Search field is rendered and the results are presented.
@@ -90,11 +90,11 @@ export default class SearchImages extends Component {
         {this.getResults()}
       </div>
     );
-  }
+  };
 
 //The component has loaded and the functions are called - was using this before but not currently
   componentDidMount(){
-    
+
   }
 
 
