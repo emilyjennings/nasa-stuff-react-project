@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
 
 export default class PlayAgain extends Component {
 
@@ -6,7 +8,7 @@ export default class PlayAgain extends Component {
 
     return (
       <div class="buttoncontainer">
-        <button onClick={e => this.props.playAgain()}>Play Again!</button>
+        <Link to="/"><button>Play Again!</button></Link>
       </div>
     );
   }

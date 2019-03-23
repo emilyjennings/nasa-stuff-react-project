@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Welcome = () => {
-
+const Header = () => {
 
     return (
       <div className="placeholder">
@@ -15,4 +14,4 @@ const Welcome = () => {
 
 }
 
-export default Welcome
+export default Header

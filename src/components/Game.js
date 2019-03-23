@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 
-import PlayAgain from '../components/PlayAgain'
+import PlayAgain from './PlayAgain'
 
 export default class Game extends Component {
 
@@ -60,6 +60,8 @@ export default class Game extends Component {
     } else {
       $(".namegamebutton").text("Wrong, Try Again. Correct Answer: " + this.state.item)
     }
+
+
   }
 
   playAgain = () => {
@@ -87,6 +89,7 @@ export default class Game extends Component {
         <div className="titlegame">Guess which one is associated with this image:</div>
         <img src={this.state.image} id="namegameimage"></img>
         {this.renderGame()}
+        {this.state.gamePlayed ? <PlayAgain /> : null}
       </div>
     );
   }

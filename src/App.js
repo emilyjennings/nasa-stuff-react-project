@@ -1,52 +1,28 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
 import './App.css';
+import Game from './components/Game'
+import SearchForm from './components/SearchForm'
 
-import SearchContainer from './containers/SearchContainer'
+import Header from './containers/Header'
+import MainContainer from './containers/MainContainer'
 
-function App() {
-  return (
-    <div>
-        <SearchContainer />
-    </div>
-  )
+export default class App extends Component {
+
+  //the welcome component has the header/navbar and the button to choose to search is toggled
+    render() {
+      return(
+        <BrowserRouter>
+          <div>
+            <Header />
+
+            <Route exact path="/" component={MainContainer} />
+            <Route exact path="/game" component={Game} />
+            <Route exact path="/search" component={SearchForm} />
+          </div>
+        </BrowserRouter>
+      )
+    }
+
 }
-
-export default App
-
-// class App extends Component {
-//   state = {
-//     buttonClicked: false,
-//     buttonSearchClicked: false
-//   }
-//
-//   showGame = (e) => {
-//     e.preventDefault();
-//     this.setState({
-//       buttonClicked: true
-//     })
-//   }
-//
-//   showSearch = (e) => {
-//     e.preventDefault();
-//     this.setState({
-//       buttonSearchClicked: true
-//     })
-//   }
-//
-//   render() {
-//     return (
-//       <div>
-//         <Welcome />
-//         <SearchContainer />
-//         // {this.state.buttonClicked == false ? <Play showGame={this.showGame} buttonClicked={this.state.buttonClicked} /> : null}
-//         // {this.state.buttonSearchClicked == false ? <Search showSearch={this.showSearch} buttonSearchClicked={this.state.buttonSearchClicked} /> : null}
-//         //
-//         // {this.state.buttonClicked == true ? <Game /> : null}
-//         // {this.state.buttonSearchClicked == true ? <SearchImages /> : null}
-//
-//       </div>
-//     );
-//   }
-// }
-//
-// export default App;

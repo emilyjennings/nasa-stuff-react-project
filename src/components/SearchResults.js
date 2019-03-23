@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 
-import Search from './Search'
+import SearchForm from './SearchForm'
 import moon from './moon.jpg'
 
 
-export default class SearchImages extends Component {
+export default class SearchResults extends Component {
   //Images come to the state and are stored there when a search is done, after the API is called
   state = {
     images: []
@@ -86,7 +86,7 @@ export default class SearchImages extends Component {
     //The Search field is rendered and the results are presented.
     return (
       <div className="searchstuff">
-        <Search fetchImages={this.fetchImages}/>
+        <SearchForm fetchImages={this.fetchImages}/>
         {this.getResults()}
       </div>
     );
