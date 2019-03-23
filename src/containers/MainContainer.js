@@ -12,6 +12,11 @@ import $ from 'jquery'
 
 export default class MainContainer extends Component {
 
+  state = {
+    gamePlayed: false,
+  }
+
+
   render() {
     return(
       <div>

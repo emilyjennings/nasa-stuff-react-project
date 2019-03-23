@@ -56,7 +56,7 @@ export default class SearchResults extends Component {
       return this.state.images.map(image =>
         <div className="cardborder">
           <div className="leftbox">
-            <div className="image"><img src={this.hasImage(image.links)}/></div>
+            <div className="image"><img src={this.hasImage(image.links)} alt="" /></div>
           </div>
           <div className="rightbox">
             <div className="title">{this.hasContent(image.data)}</div>

@@ -11,43 +11,51 @@ export default class Game extends Component {
     image: "",
     item: "",
     gamePlayed: false,
-    playAgain: false,
-    attempts: 0
+    gameCount: 0
   }
 
 //ajax request to get the image for the game
   getGameImage = () => {
     const spaceSearch = ["moon", "earth", "jupiter", "saturn", "pluto", "mars", "venus"]
     let randomSearchItem = spaceSearch[Math.floor(Math.random()*spaceSearch.length)];
+    let oneHundred = [];
+    for (let i = 0; i <= 100; i++) {
+       oneHundred.push(i);
+    }
+    let randomNumber = oneHundred[Math.floor(Math.random()*oneHundred.length)]
 
     const url = "https://images-api.nasa.gov/search?q="
 
-    //sending the call to the NASA API
+    // sending the call to the NASA API
+        $.ajax({
+          url: url + randomSearchItem,
+          type: "GET",
+          dataType : "json",
+        }).done(function(json){
+          let imageres = json.collection.items[randomNumber].links[0].href
+        }).then(json => {
+          this.setState({
+            image: json.collection.items[randomNumber].links[0].href,
+            item: randomSearchItem
+           })
+        })
+
         // $.ajax({
         //   url: url + randomSearchItem,
         //   type: "GET",
         //   dataType : "json",
         // }).done(function(json){
-        //   let imageres = json.collection.items[0].links[0].href
         // }).then(json => {
         //   this.setState({
-        //     image: json.collection.items[0].links[0].href,
+        //     images: json.collection,
         //     item: randomSearchItem
         //    })
         // })
+        //
+        // this.setState({
+        //   image: this.state.images[Math.floor(Math.random()*this.state.images.length)]
+        // })
 
-        $.ajax({
-          url: url + randomSearchItem
-        }).then(json => {
-          this.setState({
-            images: json.collection.items,
-            item: randomSearchItem
-           })
-        })
-
-        this.setState({
-          image: this.state.images[Math.floor(Math.random()*this.state.images.length)]
-        })
 
   }
 
@@ -93,7 +101,7 @@ export default class Game extends Component {
 //ajax request after the component mounts
   componentDidMount(){
     this.getGameImage()
-
+    this.setState({gameCount: this.state.gameCount++})
   }
 
 
@@ -101,11 +109,14 @@ export default class Game extends Component {
   render() {
 
     return (
+
       <div className="namegame" >
+  
         <div className="titlegame">Guess which one is associated with this image:</div>
-        <img src="{this.state.image}" id="namegameimage"></img>
+        <img src={this.state.image} id="namegameimage" />
         {this.renderGame()}
         {this.state.gamePlayed ? <PlayAgain /> : null}
+
       </div>
     );
   }

@@ -6,7 +6,7 @@ export default class PlayButton extends Component {
 
     return (
       <div class="buttoncontainer">
-        <button onClick={ e => this.props.showGame(e)}>Play!</button>
+        <button onClick={e => this.props.showGame(e)}>Play!</button>
       </div>
     );
   }

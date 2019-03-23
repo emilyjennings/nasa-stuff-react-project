@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 
 export default class PlayAgain extends Component {
 
+  reloadPage = () => {
+    document.location.reload(true)
+  }
+
   render() {
 
     return (
       <div className="playagainbutton">
-        <Link to="/"><button>Again!</button></Link>
+        <button onClick={this.reloadPage}>Again!</button>
       </div>
     );
   }
