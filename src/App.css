@@ -99,6 +99,17 @@ button:hover {
   font-size: 30px;
 }
 
+.playagainbutton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 80px 0;
+}
+
+.namegamebutton {
+  margin: 30px 0 90px 0;
+}
+
 /* Hamburger Nav Menu */
 
 #cross {

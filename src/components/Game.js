@@ -55,10 +55,10 @@ export default class Game extends Component {
     })
 
     if (this.state.item == e.target.id) {
-      $(".namegamebutton").text("You're Right!")
+      $(".namegamebutton").html("You're Right!")
 
     } else {
-      $(".namegamebutton").text("Wrong, Try Again. Correct Answer: " + this.state.item)
+      $(".namegamebutton").html("Wrong, Try Again. Correct Answer: " + this.state.item)
     }
 
 

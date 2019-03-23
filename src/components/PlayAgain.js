@@ -7,8 +7,8 @@ export default class PlayAgain extends Component {
   render() {
 
     return (
-      <div class="buttoncontainer">
-        <Link to="/"><button>Play Again!</button></Link>
+      <div className="playagainbutton">
+        <Link to="/"><button>Again!</button></Link>
       </div>
     );
   }
