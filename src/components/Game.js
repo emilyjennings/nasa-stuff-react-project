@@ -7,6 +7,7 @@ export default class Game extends Component {
 
 //state tracks the current image from the api, the item trhe player guessed, attempts played, and whether the game has been played once
   state = {
+    images: [],
     image: "",
     item: "",
     gamePlayed: false,
@@ -22,18 +23,32 @@ export default class Game extends Component {
     const url = "https://images-api.nasa.gov/search?q="
 
     //sending the call to the NASA API
+        // $.ajax({
+        //   url: url + randomSearchItem,
+        //   type: "GET",
+        //   dataType : "json",
+        // }).done(function(json){
+        //   let imageres = json.collection.items[0].links[0].href
+        // }).then(json => {
+        //   this.setState({
+        //     image: json.collection.items[0].links[0].href,
+        //     item: randomSearchItem
+        //    })
+        // })
+
         $.ajax({
-          url: url + randomSearchItem,
-          type: "GET",
-          dataType : "json",
-        }).done(function(json){
-          let imageres = json.collection.items[0].links[0].href
+          url: url + randomSearchItem
         }).then(json => {
           this.setState({
-            image: json.collection.items[0].links[0].href,
+            images: json.collection.items,
             item: randomSearchItem
            })
         })
+
+        this.setState({
+          image: this.state.images[Math.floor(Math.random()*this.state.images.length)]
+        })
+
   }
 
 //the game choices are rendered
@@ -84,10 +99,11 @@ export default class Game extends Component {
 
 //Renders the game image, the choices, and determines if the game is done and can be played again
   render() {
+
     return (
       <div className="namegame" >
         <div className="titlegame">Guess which one is associated with this image:</div>
-        <img src={this.state.image} id="namegameimage"></img>
+        <img src="{this.state.image}" id="namegameimage"></img>
         {this.renderGame()}
         {this.state.gamePlayed ? <PlayAgain /> : null}
       </div>
