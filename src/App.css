@@ -248,7 +248,7 @@ button:hover {
 
 input {
   display: block;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 10px auto;
   width: 300px;
   height: 30px;
 }
@@ -270,6 +270,7 @@ input {
 .searchstuff {
   text-align: center;
 }
+
 
 @media all and (max-width: 950px) {
 

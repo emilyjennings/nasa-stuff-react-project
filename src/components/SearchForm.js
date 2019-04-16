@@ -23,7 +23,7 @@ class SearchForm extends Component {
         <h3 className="searchtext">Enter a Celestial Term:</h3>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
-          <Link to="/search" onClick={this.handleSubmit}><button>Submit</button></Link>
+          <Link to="/search" onClick={this.handleSubmit}><button id="searchformbutton">Submit</button></Link>
         </form>
       </div>
     )

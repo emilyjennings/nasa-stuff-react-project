@@ -14,19 +14,19 @@ import MainContainer from './containers/MainContainer'
 export default class App extends Component {
 
   state = {
-      images: []
-    }
+    images: []
+  }
 
 
 
-  //The NASA API is called and then the results go to the state
-    fetchImages = (query = "") => {
-        $.ajax({
-          url: `https://images-api.nasa.gov/search?q=${query}`
-        }).then(json => {
-          this.setState({ images: json.collection.items })
-        })
-    }
+//The NASA API is called and then the results go to the state
+  fetchImages = (query = "") => {
+    $.ajax({
+      url: `https://images-api.nasa.gov/search?q=${query}`
+    }).then(json => {
+      this.setState({ images: json.collection.items })
+    })
+  }
 
   //the welcome component has the header/navbar and the button to choose to search is toggled
     render() {
