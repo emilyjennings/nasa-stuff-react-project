@@ -48,7 +48,6 @@ button:hover {
   color: black;
 }
 
-
 .buttoncontainer {
   display: inline-block;
   float: left;
@@ -110,72 +109,12 @@ button:hover {
   margin: 30px 0 90px 0;
 }
 
-/* Hamburger Nav Menu */
-
-#cross {
-  text-decoration: none;
-  font-size: 19px;
-}
-
-#top {
+.noresult {
+  display: block;
+  width: 100%;
   text-align: center;
-  padding: 10px;
-  display: block;
-  margin: 30px auto;
-  font-size: 20px;
-  border: 3px solid #fce399;
-  border-radius: 80px;
-  background: black;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  z-index: 100;
-  opacity: 0;
 }
 
-#hamburger {
-  background-color: black;
-  position: fixed;
-  top: 0;
-  right: 0;
-  border-radius: 5px 5px 5px 5px;
-  margin: 20px;
-  border: 1px solid #fce399;
-  line-height: 2.5em;
-  font-family: monospace;
-  font-size: 20px;
-  padding: 1px 13px;
-  opacity: 0.8;
-  color: #fce399;
-  z-index: 100;
-}
-
-.nav {
-  overflow: hidden;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  right: 0;
-  border-radius: 5px 5px 5px 5px;
-  margin: 10px;
-  border: 1px solid #ebedc7;
-  display: block;
-  line-height: 2.5em;
-  font-family: monospace;
-  font-size: 16px;
-  padding: 8px;
-  opacity: 0.8;
-  z-index: 100;
-}
-
-.nav a {
-  display: block;
-  color: #fce399;
-}
-
-a:hover {
-  color: #f9f1d9;
-}
 
 /* Cards */
 
@@ -264,8 +203,6 @@ a:hover {
 .placeholder {
   height: 300px;
 }
-
-
 .navbar {
   display: block;
   position: fixed;
@@ -277,7 +214,7 @@ a:hover {
   font-family: Georgia;
   font-weight: bold;
   z-index: 1;
-  padding: 30px
+  padding: 30px;
 }
 
 .navtitle {
@@ -288,6 +225,7 @@ a:hover {
   color: #4A5050;
   text-align: left;
   padding-left: 40px;
+  text-decoration: none;
 }
 
 .emily {
@@ -302,7 +240,7 @@ a:hover {
 }
 
 .navbar a {
-  text-decoration: underline;
+  text-decoration: none;
   color: #4A5050
 }
 

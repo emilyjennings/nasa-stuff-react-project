@@ -13,6 +13,7 @@ export default class PlayAgain extends Component {
     return (
       <div className="playagainbutton">
         <button onClick={this.reloadPage}>Again!</button>
+        <Link to="/"><button className="back">Go Back</button></Link>
       </div>
     );
   }

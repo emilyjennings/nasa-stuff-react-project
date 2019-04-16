@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
-
+  
 import PlayAgain from './PlayAgain'
 
 export default class Game extends Component {
@@ -40,23 +40,6 @@ export default class Game extends Component {
            })
         })
 
-        // $.ajax({
-        //   url: url + randomSearchItem,
-        //   type: "GET",
-        //   dataType : "json",
-        // }).done(function(json){
-        // }).then(json => {
-        //   this.setState({
-        //     images: json.collection,
-        //     item: randomSearchItem
-        //    })
-        // })
-        //
-        // this.setState({
-        //   image: this.state.images[Math.floor(Math.random()*this.state.images.length)]
-        // })
-
-
   }
 
 //the game choices are rendered
@@ -77,7 +60,7 @@ export default class Game extends Component {
       guess: e.target.id
     })
 
-    if (this.state.item == e.target.id) {
+    if (this.state.item === e.target.id) {
       $(".namegamebutton").html("You're Right!")
 
     } else {
@@ -111,7 +94,7 @@ export default class Game extends Component {
     return (
 
       <div className="namegame" >
-  
+
         <div className="titlegame">Guess which one is associated with this image:</div>
         <img src={this.state.image} id="namegameimage" />
         {this.renderGame()}

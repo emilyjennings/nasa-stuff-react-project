@@ -5,7 +5,7 @@ export default class PlayButton extends Component {
   render() {
 
     return (
-      <div class="buttoncontainer">
+      <div className="buttoncontainer">
         <button onClick={e => this.props.showGame(e)}>Play!</button>
       </div>
     );
